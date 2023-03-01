@@ -9,7 +9,6 @@ const Cart = ({handleCartPopup}) => {
     // extra logic
     dispatch(resetCart());
   };
-  console.log(cartSate)
   return (
     <div
       className="relative z-10"
@@ -147,7 +146,7 @@ const Cart = ({handleCartPopup}) => {
 
                 <div className="border-t border-gray-200 pt-2 pb-6 px-4 sm:px-6">
                   <div className="flex justify-between text-base font-medium text-gray-900">
-                    <p>Total</p>
+                    <p>Subtotal</p>
                     <p><bdi>$</bdi>{" "}
                       {cartSate.items.reduce(
                         (total, cartItem) =>

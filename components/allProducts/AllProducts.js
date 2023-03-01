@@ -1,14 +1,21 @@
 import React from "react";
 import {useDispatch, useSelector} from "react-redux";
-import Data from "@/data/data";
 import {addItem} from "@/redux/cart/cartSlice";
+import {useQuery} from "react-query";
+import {getAllProducts} from "./../../getAPI/ProductsAPI";
+import {setProducts} from "@/redux/products/ProductsSlice";
 
 const AllProducts = () => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.products.allProducts);
+  const productsQuery = useQuery({
+    queryKey: "product",
+    queryFn: getAllProducts,
+    onSuccess: (data) => dispatch(setProducts(data)),
+  });
+console.log(data);
   return (
     <>
-      <Data />
       <section className="max-w-7xl mx-auto">
         <h1 className="text-center text-7xl font-bold mb-10">All Products</h1>
         <div className="flex flex-wrap justify-center items-center gap-5">

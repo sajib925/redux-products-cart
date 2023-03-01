@@ -12,7 +12,7 @@ const SearchFilter = () => {
       <input
         type="text"
         name=""
-        className=""
+        className="w-[100%] p-2 outline-none border-2 border-gray-300 rounded-xl"
         placeholder="Search product by title"
         onChange={filterProduct}
       />
